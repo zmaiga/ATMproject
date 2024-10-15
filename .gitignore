@@ -1,0 +1,8 @@
+*.bdf
+.settings/
+build/
+obj/
+ATMproject_lib.a
+.build/
+.coverage
+.vscode
