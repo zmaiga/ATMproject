@@ -1,73 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="13" failures="1" disabled="0" errors="0" time="0." timestamp="2024-10-10T18:58:43.443" name="AllTests">
-  <testsuite name="Account" tests="7" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-10-10T18:58:43.443">
-    <testcase name="getBalanceDefault" file="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp" line="6" status="run" result="completed" time="0." timestamp="2024-10-10T18:58:43.443" classname="Account">
+<testsuites tests="13" failures="1" disabled="0" errors="0" time="0." timestamp="2025-01-17T12:03:05.537" name="AllTests">
+  <testsuite name="Account" tests="7" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2025-01-17T12:03:05.537">
+    <testcase name="getBalanceDefault" file="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp" line="6" status="run" result="completed" time="0." timestamp="2025-01-17T12:03:05.537" classname="Account">
       <properties>
         <property name="req" value="ATM_test-520"/>
         <property name="cpptest_filename" value="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp"/>
       </properties>
     </testcase>
-    <testcase name="getBalanceInit" file="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp" line="13" status="run" result="completed" time="0." timestamp="2024-10-10T18:58:43.443" classname="Account">
+    <testcase name="getBalanceInit" file="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp" line="13" status="run" result="completed" time="0." timestamp="2025-01-17T12:03:05.537" classname="Account">
       <properties>
         <property name="req" value="ATM_test-520"/>
         <property name="cpptest_filename" value="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp"/>
       </properties>
     </testcase>
-    <testcase name="getAndSetPassword" file="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp" line="21" status="run" result="completed" time="0." timestamp="2024-10-10T18:58:43.443" classname="Account">
+    <testcase name="getAndSetPassword" file="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp" line="21" status="run" result="completed" time="0." timestamp="2025-01-17T12:03:05.537" classname="Account">
       <properties>
         <property name="req" value="ATM_test-520"/>
         <property name="cpptest_filename" value="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp"/>
       </properties>
     </testcase>
-    <testcase name="getAndSetPasswordEmpty" file="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp" line="31" status="run" result="completed" time="0." timestamp="2024-10-10T18:58:43.443" classname="Account">
+    <testcase name="getAndSetPasswordEmpty" file="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp" line="31" status="run" result="completed" time="0." timestamp="2025-01-17T12:03:05.537" classname="Account">
       <properties>
         <property name="req" value="ATM_test-520"/>
         <property name="cpptest_filename" value="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp"/>
       </properties>
     </testcase>
-    <testcase name="getAndSetAccountNumber" file="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp" line="41" status="run" result="completed" time="0." timestamp="2024-10-10T18:58:43.443" classname="Account">
+    <testcase name="getAndSetAccountNumber" file="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp" line="41" status="run" result="completed" time="0." timestamp="2025-01-17T12:03:05.537" classname="Account">
       <properties>
         <property name="req" value="ATM_test-520"/>
         <property name="cpptest_filename" value="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp"/>
       </properties>
     </testcase>
-    <testcase name="depositSimple" file="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp" line="50" status="run" result="completed" time="0." timestamp="2024-10-10T18:58:43.443" classname="Account">
+    <testcase name="depositSimple" file="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp" line="50" status="run" result="completed" time="0." timestamp="2025-01-17T12:03:05.537" classname="Account">
       <properties>
         <property name="req" value="ATM_test-520"/>
         <property name="cpptest_filename" value="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp"/>
       </properties>
     </testcase>
-    <testcase name="debitSimple" file="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp" line="60" status="run" result="completed" time="0." timestamp="2024-10-10T18:58:43.443" classname="Account">
+    <testcase name="debitSimple" file="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp" line="60" status="run" result="completed" time="0." timestamp="2025-01-17T12:03:05.537" classname="Account">
       <properties>
         <property name="req" value="ATM_test-520"/>
         <property name="cpptest_filename" value="/home/support/ct_work/ATMproject/tests/gt/AccountTest.hpp"/>
       </properties>
     </testcase>
   </testsuite>
-  <testsuite name="Bank" tests="5" failures="1" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-10-10T18:58:43.443">
-    <testcase name="addAccount" file="/home/support/ct_work/ATMproject/tests/gt/BankTest.hpp" line="6" status="run" result="completed" time="0." timestamp="2024-10-10T18:58:43.443" classname="Bank">
+  <testsuite name="Bank" tests="5" failures="1" disabled="0" skipped="0" errors="0" time="0." timestamp="2025-01-17T12:03:05.537">
+    <testcase name="addAccount" file="/home/support/ct_work/ATMproject/tests/gt/BankTest.hpp" line="6" status="run" result="completed" time="0." timestamp="2025-01-17T12:03:05.537" classname="Bank">
       <properties>
         <property name="req" value="ATM_test-521"/>
         <property name="cpptest_filename" value="/home/support/ct_work/ATMproject/tests/gt/BankTest.hpp"/>
       </properties>
     </testcase>
-    <testcase name="addAccountMultiple" file="/home/support/ct_work/ATMproject/tests/gt/BankTest.hpp" line="14" status="run" result="completed" time="0." timestamp="2024-10-10T18:58:43.443" classname="Bank">
+    <testcase name="addAccountMultiple" file="/home/support/ct_work/ATMproject/tests/gt/BankTest.hpp" line="14" status="run" result="completed" time="0." timestamp="2025-01-17T12:03:05.537" classname="Bank">
       <properties>
         <property name="req" value="ATM_test-521"/>
         <property name="cpptest_filename" value="/home/support/ct_work/ATMproject/tests/gt/BankTest.hpp"/>
       </properties>
     </testcase>
-    <testcase name="getAccount_1" file="/home/support/ct_work/ATMproject/tests/gt/BankTest.hpp" line="26" status="run" result="completed" time="0." timestamp="2024-10-10T18:58:43.443" classname="Bank">
+    <testcase name="getAccount_1" file="/home/support/ct_work/ATMproject/tests/gt/BankTest.hpp" line="26" status="run" result="completed" time="0." timestamp="2025-01-17T12:03:05.537" classname="Bank">
       <properties>
         <property name="cpptest_filename" value="/home/support/ct_work/ATMproject/tests/gt/BankTest.hpp"/>
       </properties>
     </testcase>
-    <testcase name="getAccount_2" file="/home/support/ct_work/ATMproject/tests/gt/BankTest.hpp" line="36" status="run" result="completed" time="0." timestamp="2024-10-10T18:58:43.443" classname="Bank">
+    <testcase name="getAccount_2" file="/home/support/ct_work/ATMproject/tests/gt/BankTest.hpp" line="36" status="run" result="completed" time="0." timestamp="2025-01-17T12:03:05.537" classname="Bank">
       <properties>
         <property name="cpptest_filename" value="/home/support/ct_work/ATMproject/tests/gt/BankTest.hpp"/>
       </properties>
     </testcase>
-    <testcase name="getAccount_3" file="/home/support/ct_work/ATMproject/tests/gt/BankTest.hpp" line="46" status="run" result="completed" time="0." timestamp="2024-10-10T18:58:43.443" classname="Bank">
+    <testcase name="getAccount_3" file="/home/support/ct_work/ATMproject/tests/gt/BankTest.hpp" line="46" status="run" result="completed" time="0." timestamp="2025-01-17T12:03:05.537" classname="Bank">
       <failure message="/home/support/ct_work/ATMproject/tests/gt/BankTest.hpp:53&#x0A;Value of: nullptr != acct&#x0A;  Actual: false&#x0A;Expected: true&#x0A;" type=""><![CDATA[/home/support/ct_work/ATMproject/tests/gt/BankTest.hpp:53
 Value of: nullptr != acct
   Actual: false
@@ -78,8 +78,8 @@ Expected: true
       </properties>
     </testcase>
   </testsuite>
-  <testsuite name="BaseDisplay" tests="1" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2024-10-10T18:58:43.443">
-    <testcase name="getType" file="/home/support/ct_work/ATMproject/tests/gt/BaseDisplayTest.hpp" line="5" status="run" result="completed" time="0." timestamp="2024-10-10T18:58:43.443" classname="BaseDisplay">
+  <testsuite name="BaseDisplay" tests="1" failures="0" disabled="0" skipped="0" errors="0" time="0." timestamp="2025-01-17T12:03:05.537">
+    <testcase name="getType" file="/home/support/ct_work/ATMproject/tests/gt/BaseDisplayTest.hpp" line="5" status="run" result="completed" time="0." timestamp="2025-01-17T12:03:05.537" classname="BaseDisplay">
       <properties>
         <property name="req" value="ATM_test-522"/>
         <property name="cpptest_filename" value="/home/support/ct_work/ATMproject/tests/gt/BaseDisplayTest.hpp"/>
