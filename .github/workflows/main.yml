@@ -2,7 +2,7 @@ name: Running gtests, collecting coverage (push master)
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, master ]
 
 env:
   LINE_COV_GATE: 0
