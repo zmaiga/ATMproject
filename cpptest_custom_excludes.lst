@@ -1,0 +1,5 @@
+-exclude build/*
+-exclude tests/*
+-exclude /home/support/ct_work/ATMproject/build/_deps/googletest-src/googlemock/src/*
+-exclude /home/support/ct_work/ATMproject/tests/gt/gtest_main.cpp
+-exclude /home/support/ct_work/ATMproject/build/_deps/googletest-src/googletest/*
