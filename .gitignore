@@ -6,3 +6,4 @@ ATMproject_lib.a
 .build/
 .coverage
 .vscode
+.cpptest
