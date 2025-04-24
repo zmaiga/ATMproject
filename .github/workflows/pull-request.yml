@@ -31,16 +31,15 @@ jobs:
 
 # Steps represent a sequence of tasks that will be executed as part of the job.
     steps:
-
-	# Checks out your repository under $GITHUB_WORKSPACE, so that your job can access it.
-	- name: Checkout code
+# Checks out your repository under $GITHUB_WORKSPACE, so that your job can access it.
+    - name: Checkout code
     - uses: actions/checkout@v4
 	
 	
-	- name: Set build id
-        shell: bash
-        working-directory: ${{github.workspace}}
-        run: echo "build_id=build-$(date +'%Y-%m-%d-%H-%M')" >> $GITHUB_ENV 
+    - name: Set build id
+      shell: bash
+      working-directory: ${{github.workspace}}
+      run: echo "build_id=build-$(date +'%Y-%m-%d-%H-%M')" >> $GITHUB_ENV 
 
     - name: Configure CMake
       shell: bash
@@ -61,7 +60,7 @@ jobs:
         rm -rf /cpptest-coverage/ATM_Cpp14_lib/ATM_Cpp14_lib.clog 
         rm -rf gtest_results.xml
         ./atm_gtest --gtest_output=xml:atm_gtest_results.xml
-      continue-on-error: true
+        continue-on-error: true
 
     - name: Compute Coverage
       working-directory: ${{github.workspace}}/.build
@@ -69,7 +68,7 @@ jobs:
       run: make cpptestcov-compute cpptestcov-suppress cpptestcov-report 
 
 	
-	- name: Archive reports
+    - name: Archive reports
       if: always()
       uses: actions/upload-artifact@v4
       with:
@@ -79,7 +78,7 @@ jobs:
           ${{github.workspace}}/.coverage/*.*
 
 
-	- name: Line Coverage Quality Gate
+    - name: Line Coverage Quality Gate
       working-directory: ${{github.workspace}}
       shell: bash
       # Query for project's coverage and compare with the gate requirements
@@ -88,5 +87,5 @@ jobs:
       working-directory: ${{github.workspace}}
       shell: bash
       # Query for project's coverage and compare with the gate requirements
-      run: NUMBER=$(cpptestcov query -coverage MCDC .coverage) && if [ $NUMBER -lt $MCDC_COV_GATE ]; then echo "MCDC coverage quality gate failed"; echo "Expected result $MCDC_COV_GATE%, achieved $NUMBER%"; false; else echo "MC/DC coverage quality gate passed with $NUMBER% (required $MCDC_COV_GATE%)"; true; fi 
-      echo "Check html report https://zmaiga.github.io/ATMproject/coverage.html"  
+      run: NUMBER=$(cpptestcov query -coverage MCDC .coverage) && if [ $NUMBER -lt $MCDC_COV_GATE ]; then echo "MCDC coverage quality gate failed"; echo "Expected result $MCDC_COV_GATE%, achieved $NUMBER%"; false; else echo "MC/DC coverage quality gate passed with $NUMBER% (required $MCDC_COV_GATE%)"; true; fi
+      
