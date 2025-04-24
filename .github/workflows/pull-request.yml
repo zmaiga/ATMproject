@@ -7,35 +7,24 @@ on:
   # Allows you to run this workflow manually from the Actions tab.
   workflow_dispatch:
 
-
 env:
   LINE_COV_GATE: 26
   MCDC_COV_GATE: 32
-  DTP_PROJECT: ATMproject
+  DTP_PROJECT: ATM_testing
+
 permissions:
   contents: read
   pages: write
   id-token: write
-  security-events: write
-  # only required for workflows in private repositories
-  actions: read
-  
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel.
-jobs:
-  run-cpptestct-cmake:
-    name: Analyze project with C/C++test CT
 
-    # Specifies the type of runner that the job will run on.
+jobs:
+  build:
     runs-on: self-hosted
     continue-on-error: true
 
-# Steps represent a sequence of tasks that will be executed as part of the job.
     steps:
-# Checks out your repository under $GITHUB_WORKSPACE, so that your job can access it.
-    - name: Checkout code
     - uses: actions/checkout@v4
-	
-	
+
     - name: Set build id
       shell: bash
       working-directory: ${{github.workspace}}
@@ -44,30 +33,31 @@ jobs:
     - name: Configure CMake
       shell: bash
       working-directory: ${{github.workspace}}
-      run: cmake -DCPPTEST_COVERAGE=ON -S . -B .build
-	  
-	  # Builds your CMake project. (This step is optional, as it is not required for code analysis).
-    - name: Build Project
+      run: cmake -DCPPTEST_COVERAGE=ON -S . -B build
+
+    - name: Build 
       working-directory: ${{github.workspace}}
       shell: bash
       # Execute the build.  You can specify a specific target with "--target <NAME>"
-      run: cmake --build .build -j8
+      run: cmake --build build
 
     - name: Run Tests
-      working-directory: ${{github.workspace}}/.build
+      working-directory: ${{github.workspace}}/build
       shell: bash
       run: |
         rm -rf /cpptest-coverage/ATM_Cpp14_lib/ATM_Cpp14_lib.clog 
         rm -rf gtest_results.xml
         ./atm_gtest --gtest_output=xml:atm_gtest_results.xml
-        continue-on-error: true
+      continue-on-error: true
 
-    - name: Compute Coverage
-      working-directory: ${{github.workspace}}/.build
+    - name: Generate Reports
+      working-directory: ${{github.workspace}}/build
       shell: bash
       run: make cpptestcov-compute cpptestcov-suppress cpptestcov-report 
+    
+#    - name: Setup Pages
+#      uses: actions/configure-pages@v5
 
-	
     - name: Archive reports
       if: always()
       uses: actions/upload-artifact@v4
@@ -77,15 +67,26 @@ jobs:
         path: |
           ${{github.workspace}}/.coverage/*.*
 
+#    - name: Upload artifact
+#      uses: actions/upload-pages-artifact@v3
+#      with:
+        # Upload coverage reports
+#        path: ${{github.workspace}}/.coverage
 
+    - name: Publish Reports to DTP
+      working-directory: ${{github.workspace}}
+      shell: bash
+      # Execute the build.  You can specify a specific target with "--target <NAME>"
+      run:  cpptestcov report dtp -settings cpptestcli.properties -property build.id=${build_id} -property dtp.project=${DTP_PROJECT} .coverage build/atm_gtest_results.xml
+    
     - name: Line Coverage Quality Gate
       working-directory: ${{github.workspace}}
       shell: bash
       # Query for project's coverage and compare with the gate requirements
       run: NUMBER=$(cpptestcov query -coverage LC .coverage) && if [ $NUMBER -lt $LINE_COV_GATE ]; then echo "Line coverage quality gate failed"; echo "Expected result $LINE_COV_GATE%, achieved $NUMBER%"; false; else echo "Line coverage quality gate passed with $NUMBER% (required $LINE_COV_GATE%)"; true; fi      
+      
     - name: MCDC Coverage Quality Gate
       working-directory: ${{github.workspace}}
       shell: bash
       # Query for project's coverage and compare with the gate requirements
-      run: NUMBER=$(cpptestcov query -coverage MCDC .coverage) && if [ $NUMBER -lt $MCDC_COV_GATE ]; then echo "MCDC coverage quality gate failed"; echo "Expected result $MCDC_COV_GATE%, achieved $NUMBER%"; false; else echo "MC/DC coverage quality gate passed with $NUMBER% (required $MCDC_COV_GATE%)"; true; fi
-      
+      run: NUMBER=$(cpptestcov query -coverage MCDC .coverage) && if [ $NUMBER -lt $MCDC_COV_GATE ]; then echo "MCDC coverage quality gate failed"; echo "Expected result $MCDC_COV_GATE%, achieved $NUMBER%"; false; else echo "MC/DC coverage quality gate passed with $NUMBER% (required $MCDC_COV_GATE%)"; true; fi  
