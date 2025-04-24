@@ -2,7 +2,7 @@ name: Running gtests on pull request to main
 on:
   # Triggers the workflow pull request events but only for the master (main) branch.
   pull_request:
-    branches: [ feature_branch1 ]
+    branches: [ master, main, feature_branch_1 ]
   
   # Allows you to run this workflow manually from the Actions tab.
   workflow_dispatch:
@@ -11,30 +11,48 @@ on:
 env:
   LINE_COV_GATE: 26
   MCDC_COV_GATE: 32
-
+  DTP_PROJECT: ATMproject
 permissions:
   contents: read
   pages: write
   id-token: write
-
+  security-events: write
+  # only required for workflows in private repositories
+  actions: read
+  
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel.
 jobs:
-  build:
+  run-cpptestct-cmake:
+    name: Analyze project with C/C++test CT
+
+    # Specifies the type of runner that the job will run on.
     runs-on: self-hosted
     continue-on-error: true
 
+# Steps represent a sequence of tasks that will be executed as part of the job.
     steps:
-    - uses: actions/checkout@v2
+
+	# Checks out your repository under $GITHUB_WORKSPACE, so that your job can access it.
+	- name: Checkout code
+    - uses: actions/checkout@v4
+	
+	
+	- name: Set build id
+        shell: bash
+        working-directory: ${{github.workspace}}
+        run: echo "build_id=build-$(date +'%Y-%m-%d-%H-%M')" >> $GITHUB_ENV 
 
     - name: Configure CMake
       shell: bash
       working-directory: ${{github.workspace}}
       run: cmake -DCPPTEST_COVERAGE=ON -S . -B .build
-
-    - name: Build 
+	  
+	  # Builds your CMake project. (This step is optional, as it is not required for code analysis).
+    - name: Build Project
       working-directory: ${{github.workspace}}
       shell: bash
       # Execute the build.  You can specify a specific target with "--target <NAME>"
-      run: cmake --build .build
+      run: cmake --build .build -j8
 
     - name: Run Tests
       working-directory: ${{github.workspace}}/.build
@@ -45,12 +63,13 @@ jobs:
         ./atm_gtest --gtest_output=xml:atm_gtest_results.xml
       continue-on-error: true
 
-    - name: Generate Reports
+    - name: Compute Coverage
       working-directory: ${{github.workspace}}/.build
       shell: bash
       run: make cpptestcov-compute cpptestcov-suppress cpptestcov-report 
- 
-    - name: Archive reports
+
+	
+	- name: Archive reports
       if: always()
       uses: actions/upload-artifact@v4
       with:
@@ -59,14 +78,15 @@ jobs:
         path: |
           ${{github.workspace}}/.coverage/*.*
 
-    - name: Line Coverage Quality Gate
+
+	- name: Line Coverage Quality Gate
       working-directory: ${{github.workspace}}
       shell: bash
       # Query for project's coverage and compare with the gate requirements
       run: NUMBER=$(cpptestcov query -coverage LC .coverage) && if [ $NUMBER -lt $LINE_COV_GATE ]; then echo "Line coverage quality gate failed"; echo "Expected result $LINE_COV_GATE%, achieved $NUMBER%"; false; else echo "Line coverage quality gate passed with $NUMBER% (required $LINE_COV_GATE%)"; true; fi      
-      
     - name: MCDC Coverage Quality Gate
       working-directory: ${{github.workspace}}
       shell: bash
       # Query for project's coverage and compare with the gate requirements
-      run: NUMBER=$(cpptestcov query -coverage MCDC .coverage) && if [ $NUMBER -lt $MCDC_COV_GATE ]; then echo "MCDC coverage quality gate failed"; echo "Expected result $MCDC_COV_GATE%, achieved $NUMBER%"; false; else echo "MC/DC coverage quality gate passed with $NUMBER% (required $MCDC_COV_GATE%)"; true; fi  
+      run: NUMBER=$(cpptestcov query -coverage MCDC .coverage) && if [ $NUMBER -lt $MCDC_COV_GATE ]; then echo "MCDC coverage quality gate failed"; echo "Expected result $MCDC_COV_GATE%, achieved $NUMBER%"; false; else echo "MC/DC coverage quality gate passed with $NUMBER% (required $MCDC_COV_GATE%)"; true; fi 
+      echo "Check html report https://zmaiga.github.io/ATMproject/coverage.html"  
