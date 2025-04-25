@@ -3,7 +3,7 @@
 #include "BaseDisplay.hxx"
 
 using std::string;
-// parasoft-cov-begin-suppress ALL "ignore coverage analysis for the function"
+
 ATM::ATM(Bank* bank, BaseDisplay* display)
 {
     myBank = bank;
@@ -64,4 +64,4 @@ void ATM::withdraw(double amount)
     myDisplay->showInfoToUser("Updated Balance");
     myDisplay->showBalance(bal);
 }
-// parasoft-cov-end-suppress
+

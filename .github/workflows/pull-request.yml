@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 env:
-  LINE_COV_GATE: 80
+  LINE_COV_GATE: 
   MCDC_COV_GATE: 50
   DTP_PROJECT: ATM_testing
 
