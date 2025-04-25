@@ -8,8 +8,8 @@ on:
   workflow_dispatch:
 
 env:
-  LINE_COV_GATE: 26
-  MCDC_COV_GATE: 32
+  LINE_COV_GATE: 80
+  MCDC_COV_GATE: 50
   DTP_PROJECT: ATM_testing
 
 permissions:
