@@ -2,15 +2,15 @@ name: Running gtests on pull request to main
 on:
   # Triggers the workflow pull request events but only for the master (main) branch.
   pull_request:
-    branches: [ feature_branch1 ]
+    branches: [ master, main, feature_branch_1 ]
   
   # Allows you to run this workflow manually from the Actions tab.
   workflow_dispatch:
 
-
 env:
-  LINE_COV_GATE: 26
-  MCDC_COV_GATE: 32
+  LINE_COV_GATE: 50
+  MCDC_COV_GATE: 50
+  DTP_PROJECT: ATM_testing
 
 permissions:
   contents: read
@@ -23,21 +23,26 @@ jobs:
     continue-on-error: true
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
+
+    - name: Set build id
+      shell: bash
+      working-directory: ${{github.workspace}}
+      run: echo "build_id=build-$(date +'%Y-%m-%d-%H-%M')" >> $GITHUB_ENV 
 
     - name: Configure CMake
       shell: bash
       working-directory: ${{github.workspace}}
-      run: cmake -DCPPTEST_COVERAGE=ON -S . -B .build
+      run: cmake -DCPPTEST_COVERAGE=ON CPPTEST_HOME=/opt/Parasoft/cpptest-ct -S . -B build
 
     - name: Build 
       working-directory: ${{github.workspace}}
       shell: bash
       # Execute the build.  You can specify a specific target with "--target <NAME>"
-      run: cmake --build .build
+      run: cmake --build build
 
     - name: Run Tests
-      working-directory: ${{github.workspace}}/.build
+      working-directory: ${{github.workspace}}/build
       shell: bash
       run: |
         rm -rf /cpptest-coverage/ATM_Cpp14_lib/ATM_Cpp14_lib.clog 
@@ -46,10 +51,13 @@ jobs:
       continue-on-error: true
 
     - name: Generate Reports
-      working-directory: ${{github.workspace}}/.build
+      working-directory: ${{github.workspace}}/build
       shell: bash
       run: make cpptestcov-compute cpptestcov-suppress cpptestcov-report 
- 
+    
+#    - name: Setup Pages
+#      uses: actions/configure-pages@v5
+
     - name: Archive reports
       if: always()
       uses: actions/upload-artifact@v4
@@ -59,6 +67,18 @@ jobs:
         path: |
           ${{github.workspace}}/.coverage/*.*
 
+#    - name: Upload artifact
+#      uses: actions/upload-pages-artifact@v3
+#      with:
+        # Upload coverage reports
+#        path: ${{github.workspace}}/.coverage
+
+    - name: Publish Reports to DTP
+      working-directory: ${{github.workspace}}
+      shell: bash
+      # Execute the build.  You can specify a specific target with "--target <NAME>"
+      run:  cpptestcov report dtp -settings cpptestcli.properties -property build.id=${build_id} -property dtp.project=${DTP_PROJECT} .coverage build/atm_gtest_results.xml
+    
     - name: Line Coverage Quality Gate
       working-directory: ${{github.workspace}}
       shell: bash
