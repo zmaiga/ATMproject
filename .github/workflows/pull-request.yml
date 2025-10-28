@@ -51,7 +51,7 @@ jobs:
       run: |
         rm -rf build/cpptest-coverage/ATMproject_lib/ATMproject_lib.clog
         rm -rf build/gtest_results.xml
-        ./atm_gtest --gtest_output=xml:build/atm_gtest_results.xml
+        ./atm_gtest --gtest_output=xml:build/gtest_results.xml
       continue-on-error: true
 
     - name: Compute Coverage
