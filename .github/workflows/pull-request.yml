@@ -16,6 +16,9 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  security-events: write
+  # only required for workflows in private repositories
+  actions: read
 
 jobs:
   build:
@@ -23,7 +26,8 @@ jobs:
     continue-on-error: true
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
 
     - name: Set build id
       shell: bash
@@ -35,58 +39,83 @@ jobs:
       working-directory: ${{github.workspace}}
       run: cmake -DCPPTEST_COVERAGE=ON CPPTEST_HOME=/opt/Parasoft/cpptest-ct -S . -B build
 
-    - name: Build 
+    - name: Build Project
       working-directory: ${{github.workspace}}
       shell: bash
       # Execute the build.  You can specify a specific target with "--target <NAME>"
       run: cmake --build build
 
-    - name: Run Tests
+    - name: Run Unit Tests
       working-directory: ${{github.workspace}}/build
       shell: bash
       run: |
-        rm -rf /cpptest-coverage/ATM_Cpp14_lib/ATM_Cpp14_lib.clog 
+        rm -rf /cpptest-coverage/ATMproject_lib/ATMproject_lib.clog 
         rm -rf gtest_results.xml
         ./atm_gtest --gtest_output=xml:atm_gtest_results.xml
       continue-on-error: true
 
-    - name: Generate Reports
+    - name: Compute Coverage
+      working-directory: ${{github.workspace}}/build
+      run: |
+        cpptestcov compute -map cpptest-coverage/ATMproject_lib/.cpptest -clog cpptest-coverage/ATMproject_lib/ATMproject_lib.clog -out .coverage
+
+    - name: Report Coverage to Console
+      working-directory: ${{github.workspace}}/build
+      run: |
+        cpptestcov report text .coverage
+
+    - name: Compute Index for VS Code
+      working-directory: ${{github.workspace}}/build
+      run: |
+        cpptestcov index .coverage
+
+    - name: Generate Coverage Reports
       working-directory: ${{github.workspace}}/build
       shell: bash
-      run: make cpptestcov-compute cpptestcov-suppress cpptestcov-report 
-    
-#    - name: Setup Pages
-#      uses: actions/configure-pages@v5
+      # Execute the build.  You can specify a specific target with "--target <NAME>"
+      run:  cpptestcov report html .coverage -code -out .coverage/coverage.html
 
+    - name: Publish Reports to DTP
+      working-directory: ${{github.workspace}}/build
+      shell: bash
+      # Execute the build.  You can specify a specific target with "--target <NAME>"
+      run:  cpptestcov report dtp -property build.id=${build_id} -property dtp.project=${DTP_PROJECT} .coverage gtest_results.xml
+      
+    - name: Setup Pages
+      uses: actions/configure-pages@v5
+    
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        # Upload coverage reports
+        path: ${{github.workspace}}/build/.coverage
+      
     - name: Archive reports
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: CpptestReports
+        name: CpptestCTReports
         include-hidden-files: true
         path: |
-          ${{github.workspace}}/.coverage/*.*
+          build/.coverage/*.*
 
-#    - name: Upload artifact
-#      uses: actions/upload-pages-artifact@v3
-#      with:
-        # Upload coverage reports
-#        path: ${{github.workspace}}/.coverage
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
 
-    - name: Publish Reports to DTP
-      working-directory: ${{github.workspace}}
+    - name: Show Coverage HTML Link
       shell: bash
-      # Execute the build.  You can specify a specific target with "--target <NAME>"
-      run:  cpptestcov report dtp -settings cpptestcli.properties -property build.id=${build_id} -property dtp.project=${DTP_PROJECT} .coverage build/atm_gtest_results.xml
-    
+      run: echo "Check html report https://zmaiga.github.io/ATMproject/coverage.html"
+
     - name: Line Coverage Quality Gate
       working-directory: ${{github.workspace}}
       shell: bash
       # Query for project's coverage and compare with the gate requirements
       run: NUMBER=$(cpptestcov query -coverage LC .coverage) && if [ $NUMBER -lt $LINE_COV_GATE ]; then echo "Line coverage quality gate failed"; echo "Expected result $LINE_COV_GATE%, achieved $NUMBER%"; false; else echo "Line coverage quality gate passed with $NUMBER% (required $LINE_COV_GATE%)"; true; fi      
-      
+          echo "Check html report https://zmaiga.github.io/ATMproject/coverage.html"
     - name: MCDC Coverage Quality Gate
       working-directory: ${{github.workspace}}
       shell: bash
       # Query for project's coverage and compare with the gate requirements
       run: NUMBER=$(cpptestcov query -coverage MCDC .coverage) && if [ $NUMBER -lt $MCDC_COV_GATE ]; then echo "MCDC coverage quality gate failed"; echo "Expected result $MCDC_COV_GATE%, achieved $NUMBER%"; false; else echo "MC/DC coverage quality gate passed with $NUMBER% (required $MCDC_COV_GATE%)"; true; fi  
+          echo "Check html report https://zmaiga.github.io/ATMproject/coverage.html"
