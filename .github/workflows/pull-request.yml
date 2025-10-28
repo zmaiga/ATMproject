@@ -50,7 +50,7 @@ jobs:
       shell: bash
       run: |
         rm -rf build/cpptest-coverage/ATMproject_lib/ATMproject_lib.clog
-        rm -rf build/gtest_results.xml
+        rm -rf build/gtest_results.xml build/atm_gtest_results.xml
         ./atm_gtest --gtest_output=xml:build/gtest_results.xml
       continue-on-error: true
 
@@ -79,7 +79,7 @@ jobs:
       
       shell: bash
       # Execute the build.  You can specify a specific target with "--target <NAME>"
-      run:  cpptestcov report dtp -property build.id=${build_id} -property dtp.project=${DTP_PROJECT} .coverage atm_gtest_results.xml
+      run:  cpptestcov report dtp -property build.id=${build_id} -property dtp.project=${DTP_PROJECT} .coverage build/gtest_results.xml
 
     - name: Setup Pages
       uses: actions/configure-pages@v5
