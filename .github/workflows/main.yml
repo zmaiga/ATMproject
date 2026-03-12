@@ -55,8 +55,8 @@ jobs:
       shell: bash
       run: make cpptestcov-compute cpptestcov-suppress cpptestcov-report 
     
-#    - name: Setup Pages
-#      uses: actions/configure-pages@v5
+    - name: Setup Pages
+      uses: actions/configure-pages@v5
 
     - name: Archive reports
       if: always()
@@ -78,6 +78,15 @@ jobs:
       shell: bash
       # Execute the build.  You can specify a specific target with "--target <NAME>"
       run:  cpptestcov report dtp -settings cpptestcli.properties -property build.id=${build_id} -property dtp.project=${DTP_PROJECT} .coverage build/atm_gtest_results.xml
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+
+    - name: Show Coverage HTML Link
+      shell: bash
+      run: echo "Check html report https://zmaiga.github.io/ATMproject/coverage.html"
+    
     
     - name: Line Coverage Quality Gate
       working-directory: ${{github.workspace}}
