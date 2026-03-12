@@ -67,11 +67,11 @@ jobs:
         path: |
           ${{github.workspace}}/.coverage/*.*
 
-#    - name: Upload artifact
-#      uses: actions/upload-pages-artifact@v3
-#      with:
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
         # Upload coverage reports
-#        path: ${{github.workspace}}/.coverage
+        path: ${{github.workspace}}/.coverage
 
     - name: Publish Reports to DTP
       working-directory: ${{github.workspace}}
