@@ -1,4 +1,4 @@
-<html xmlns:graph="graph" xmlns:results="results">
+<html xmlns:graph="graph" xmlns:results="results" lang="en">
 <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <style type="text/css">
@@ -26,10 +26,10 @@
     A.black_link:visited {font-family: Arial;font-size: 12px;color: #000000;text-decoration: none;}
     A.black_link:hover {font-family: Arial;font-size: 12px;color: #000000;text-decoration: underline;}
 
-    A.blue_link:link {font-family: Arial;font-size: 12px;color: #0093D2;text-decoration: none;}
-    A.blue_link:active {font-family: Arial;font-size: 12px;color: #0093D2;text-decoration: none;}
-    A.blue_link:visited {font-family: Arial;font-size: 12px;color: #0093D2;text-decoration: none;}
-    A.blue_link:hover {font-family: Arial;font-size: 12px;color: #0093D2;text-decoration: underline;}
+    A.blue_link:link {font-family: Arial;font-size: 12px;color: #006B9B;text-decoration: none;}
+    A.blue_link:active {font-family: Arial;font-size: 12px;color: #006B9B;text-decoration: none;}
+    A.blue_link:visited {font-family: Arial;font-size: 12px;color: #006B9B;text-decoration: none;}
+    A.blue_link:hover {font-family: Arial;font-size: 12px;color: #006B9B;text-decoration: underline;}
 
     A.gray_red_link:link {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
     A.gray_red_link:active {font-family: Arial;font-size: 12px;color: #666666;text-decoration: none;}
@@ -78,9 +78,14 @@
     }
 
     FONT.main_header {
-         font-size: 28px;
-         font-family: Arial, Helvetica, sans-serif;
-         color: #FFFFFF;
+        font-size: 28px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #FFFFFF;
+    }
+
+    H1.main_header {
+        font-weight:normal;
+        margin-bottom:0px;
     }
 
     TABLE.main_header_small {
@@ -229,7 +234,7 @@
     #metrics_foldheader{cursor:pointer;cursor:hand ;}
     #exec_foldheader{cursor:pointer;cursor:hand ;}
     #paramsHeader {word-break:break-all;overflow: auto; padding: 3px;}
-    </style><title>C/C++test&nbsp;Report&nbsp;[2025-09-16T14:39:30+02:00]
+    </style><title>C/C++test&nbsp;Report&nbsp;[2026-10-06T14:24:16+02:00]
 
 </title><script language="JavaScript">
     var nwin;
@@ -314,6 +319,10 @@
     {
        cur=ns6 ? e.target : event.srcElement;
 
+       if (cur.classList.contains("nofolding")) {
+			return;
+	   }
+	
        checkFor("foldinglist", "foldheader", cur);
        checkFor("cs_foldinglist", "cs_foldheader", cur);
        checkFor("cr_foldinglist", "cr_foldheader", cur);
@@ -436,7 +445,7 @@
     }
     </script></head>
 <body bgcolor="#FFFFFF" style="margin:0;padding:0">
-<table class="singleborder_main" width="100%" cellpadding="0" cellspacing="0">
+<table role="main" class="singleborder_main" width="100%" cellpadding="0" cellspacing="0">
 <tr>
 <td>
 <table xmlns:textutil="textutil" xmlns:authors="authors" width="100%" class="main_header_top">
@@ -444,14 +453,16 @@
 </table>
 <table xmlns:textutil="textutil" xmlns:authors="authors" width="100%" class="main_header">
 <tr>
-<td width="20%" align="left" class="main_header"><img src="rep_header_logo_x10.png"></td>
+<td width="20%" align="left" class="main_header"><img src="rep_header_logo_x10.png" alt="rep_header_logo_x10.png"></td>
 <td width="60%" class="main_header">
 <table width="100%" cellpadding="0" cellspacing="0">
 <tr>
 <td class="main_header">
 <table width="100%" class="main_header">
 <tr>
-<td align="center" class="main_header"><font class="main_header">Parasoft&nbsp;C/C++test&nbsp;Report</font></td>
+<td align="center" class="main_header">
+<H1 class="main_header"><font class="main_header">Parasoft&nbsp;C/C++test&nbsp;Report</font></H1>
+</td>
 </tr>
 </table>
 </td>
@@ -460,7 +471,7 @@
 <td>
 <table width="100%" class="main_header_small">
 <tr>
-<td align="center" class="main_header_small"><font class="main_header_small">C/C++test&nbsp;2024.2.1</font></td>
+<td align="center" class="main_header_small"><font class="main_header_small">C/C++test&nbsp;2026.1.0</font></td>
 </tr>
 </table>
 </td>
@@ -496,7 +507,7 @@
 <table width="100%" cellpadding="0" cellspacing="0">
 <tr>
 <td width="20%" class="summary_cell" style="white-space: nowrap; vertical-align: baseline;"><b>Build ID:</b></td>
-<td class="summary_cell" style="word-break: break-word;">ATM_testing-2025-09-16</td>
+<td class="summary_cell" style="word-break: break-word;">ATM_testing-2026-10-06</td>
 </tr>
 <tr>
 <td class="summary_cell" style="white-space: nowrap; vertical-align: baseline;"><b>Test Configuration:</b></td>
@@ -504,7 +515,7 @@
 </tr>
 <tr>
 <td class="summary_cell" style="white-space: nowrap; vertical-align: baseline;"><b>Started:</b></td>
-<td class="summary_cell">2025-09-16T14:39:30+02:00</td>
+<td class="summary_cell">2026-10-06T14:24:16+02:00</td>
 </tr>
 <tr>
 <td class="summary_cell" style="white-space: nowrap; vertical-align: baseline;"><b>Performed on:</b></td>
@@ -548,7 +559,7 @@
 </table>
 <table xmlns:textutil="textutil" xmlns:authors="authors" width="100%" cellpadding="2" cellspacing="0">
 <tr>
-<td align="center"><img src="standard_summary_09-16-25_14-39-30.jpeg" alt="standard_summary_09-16-25_14-39-30.jpeg"></td>
+<td align="center"><img src="standard_summary_10-06-26_14-24-16.jpeg" alt="standard_summary_10-06-26_14-24-16.jpeg"></td>
 </tr>
 </table>&nbsp;
 <table xmlns:textutil="textutil" xmlns:authors="authors" width="100%" cellpadding="0" cellspacing="0" class="section_header" onclick="javascript:toggleDiv('cs_details_section')">
@@ -599,22 +610,22 @@
 <tr class="alternating">
 <td class="singleborder right_separator" align="left">&nbsp;ATMproject</td>
 <td class="singleborder" align="center">&nbsp;1&nbsp;</td>
-<td class="singleborder" align="center">53&nbsp;</td>
-<td class="singleborder right_separator" align="center">1352&nbsp;</td>
+<td class="singleborder" align="center">59&nbsp;</td>
+<td class="singleborder right_separator" align="center">1505&nbsp;</td>
 <td class="singleborder" align="center">&nbsp;8&nbsp;</td>
 <td class="singleborder  right_separator" align="center">8&nbsp;</td>
 <td class="singleborder" align="center">&nbsp;392&nbsp;</td>
 <td class="singleborder" align="center">392&nbsp;</td>
 </tr>
 <tr>
-<td class="singleborder  right_separator" align="left" bgcolor="#CCCCCC">&nbsp;<b>Total</b> [0:00:02]
+<td class="singleborder  right_separator" align="left" bgcolor="#CCCCCC">&nbsp;<b>Total</b> [0:00:01]
 
 </td>
 <td class="singleborder" align="center" bgcolor="#CCCCCC">&nbsp;<b>1</b>&nbsp;
 </td>
-<td class="singleborder" align="center" bgcolor="#CCCCCC">&nbsp;<b>53</b>&nbsp;
+<td class="singleborder" align="center" bgcolor="#CCCCCC">&nbsp;<b>59</b>&nbsp;
 </td>
-<td class="singleborder right_separator" align="center" bgcolor="#CCCCCC">&nbsp;<b>1352</b>&nbsp;
+<td class="singleborder right_separator" align="center" bgcolor="#CCCCCC">&nbsp;<b>1505</b>&nbsp;
 </td>
 <td class="singleborder" align="center" bgcolor="#CCCCCC"><b>8</b>&nbsp;
 </td>
@@ -781,14 +792,14 @@
 <tr>
 <td class="tree">&nbsp;
 [<b>1</b>]
-&nbsp;&nbsp;<b>Rule 7.0.6 (Required) Assignment between numeric types shall be appropriate</b>&nbsp;<font class="gray">(MISRACPP2023-7_0_6)</font>&nbsp;
+&nbsp;&nbsp;<b>Rule 7.0.6 (Required) Converting transfers between numeric types shall be appropriate</b>&nbsp;<font class="gray">(MISRACPP2023-7_0_6)</font>&nbsp;
 </td>
 </tr>
 <tr>
 <td class="tree_node">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 [<b>1</b>]
-&nbsp;&nbsp;Assignment between numeric types shall be appropriate&nbsp;<font class="gray">(MISRACPP2023-7_0_6-a-2)</font>&nbsp;
+&nbsp;&nbsp;Converting transfers between numeric types shall be appropriate&nbsp;<font class="gray">(MISRACPP2023-7_0_6-a-2)</font>&nbsp;
 </td>
 </tr>
 <tr>
@@ -840,6 +851,19 @@ category of an operand</b>&nbsp;<font class="gray">(MISRACPP2023-7_0_5)</font>&n
 </tr>
 <tr>
 <td class="tree">&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>Rule 8.2.8 (Required) An object pointer type shall not be cast to an integral type other than std::uintptr_t or std::intptr_t</b>&nbsp;<font class="gray">(MISRACPP2023-8_2_8)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td class="tree_node">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;A conversion should not be performed from a pointer type to an arithmetic type&nbsp;<font class="gray">(MISRACPP2023-8_2_8-b-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td class="tree">&nbsp;
 [<b>1</b>]
 &nbsp;&nbsp;<b>Rule 0.0.2 (Advisory) Controlling expressions should not be invariant</b>&nbsp;<font class="gray">(MISRACPP2023-0_0_2)</font>&nbsp;
 </td>
@@ -853,15 +877,28 @@ category of an operand</b>&nbsp;<font class="gray">(MISRACPP2023-7_0_5)</font>&n
 </tr>
 <tr>
 <td class="tree">&nbsp;
+[<b>3</b>]
+&nbsp;&nbsp;<b>Rule 8.2.7 (Advisory) A cast should not convert a pointer type to an integral type</b>&nbsp;<font class="gray">(MISRACPP2023-8_2_7)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td class="tree_node">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;A conversion should not be performed from a pointer type to an arithmetic type&nbsp;<font class="gray">(MISRACPP2023-8_2_7-c-4)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td class="tree">&nbsp;
 [<b>2</b>]
-&nbsp;&nbsp;<b>Rule 15.0.2 (Advisory) User-provided copy and move member functions of a class should have appropriate signatures</b>&nbsp;<font class="gray">(MISRACPP2023-15_0_2)</font>&nbsp;
+&nbsp;&nbsp;<b>Rule 15.0.2 (Advisory) User-declared, non-deleted copy and move member functions of a class should have appropriate signatures</b>&nbsp;<font class="gray">(MISRACPP2023-15_0_2)</font>&nbsp;
 </td>
 </tr>
 <tr>
 <td class="tree_node">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 [<b>2</b>]
-&nbsp;&nbsp;User-provided copy and move member functions of a class should have appropriate signatures&nbsp;<font class="gray">(MISRACPP2023-15_0_2-a-4)</font>&nbsp;
+&nbsp;&nbsp;User-declared, non-deleted copy and move member functions of a class should have appropriate signatures&nbsp;<font class="gray">(MISRACPP2023-15_0_2-a-4)</font>&nbsp;
 </td>
 </tr>
 <tr>
@@ -894,7 +931,8 @@ category of an operand</b>&nbsp;<font class="gray">(MISRACPP2023-7_0_5)</font>&n
 <td class="tree_node">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 [<b>1</b>]
-&nbsp;&nbsp;C-style casts (other than void casts) and functional notation casts (other than explicit constructor calls) shall not be used&nbsp;<font class="gray">(MISRACPP2023-8_2_2-a-2)</font>&nbsp;
+&nbsp;&nbsp;C-style casts (other than 'void' casts) and functional notation casts (other than explicit constructor calls) should not be
+used&nbsp;<font class="gray">(MISRACPP2023-8_2_2-b-2)</font>&nbsp;
 </td>
 </tr>
 <tr>
@@ -907,7 +945,7 @@ category of an operand</b>&nbsp;<font class="gray">(MISRACPP2023-7_0_5)</font>&n
 <td class="tree_node">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 [<b>1</b>]
-&nbsp;&nbsp;'if' and 'else' should be followed by a compound statement&nbsp;<font class="gray">(MISRACPP2023-9_3_1-b-2)</font>&nbsp;
+&nbsp;&nbsp;The statement forming the body of an 'if' or 'else' statement should be a compound statement&nbsp;<font class="gray">(MISRACPP2023-9_3_1-b-2)</font>&nbsp;
 </td>
 </tr>
 <tr>
@@ -920,7 +958,7 @@ category of an operand</b>&nbsp;<font class="gray">(MISRACPP2023-7_0_5)</font>&n
 <td class="tree_node">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 [<b>1</b>]
-&nbsp;&nbsp;Prefer 'nullptr' over 'NULL' or '0'(zero)&nbsp;<font class="gray">(MISRACPP2023-7_11_1-a-2)</font>&nbsp;
+&nbsp;&nbsp;The only form of the null-pointer-constant should be 'nullptr'&nbsp;<font class="gray">(MISRACPP2023-7_11_1-a-2)</font>&nbsp;
 </td>
 </tr>
 <tr>
@@ -954,7 +992,7 @@ declarations</b>&nbsp;<font class="gray">(MISRACPP2023-6_0_3)</font>&nbsp;
 <table width="100%" class="doubleborder" cellpadding="0" cellspacing="0">
 <tr>
 <td class="tree">&nbsp;
-[<b>23</b>]
+[<b>26</b>]
 &nbsp;&nbsp;<b>Severity&nbsp;2 - High</b></td>
 </tr>
 <tr>
@@ -1017,14 +1055,14 @@ declarations</b>&nbsp;<font class="gray">(MISRACPP2023-6_0_3)</font>&nbsp;
 <td class="tree_node">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 [<b>1</b>]
-&nbsp;&nbsp;Assignment between numeric types shall be appropriate&nbsp;<font class="gray">(MISRACPP2023-7_0_6-a-2)</font>&nbsp;
+&nbsp;&nbsp;Converting transfers between numeric types shall be appropriate&nbsp;<font class="gray">(MISRACPP2023-7_0_6-a-2)</font>&nbsp;
 </td>
 </tr>
 <tr>
 <td class="tree_node">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 [<b>1</b>]
-&nbsp;&nbsp;Prefer 'nullptr' over 'NULL' or '0'(zero)&nbsp;<font class="gray">(MISRACPP2023-7_11_1-a-2)</font>&nbsp;
+&nbsp;&nbsp;The only form of the null-pointer-constant should be 'nullptr'&nbsp;<font class="gray">(MISRACPP2023-7_11_1-a-2)</font>&nbsp;
 </td>
 </tr>
 <tr>
@@ -1038,14 +1076,22 @@ declarations</b>&nbsp;<font class="gray">(MISRACPP2023-6_0_3)</font>&nbsp;
 <td class="tree_node">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 [<b>1</b>]
-&nbsp;&nbsp;C-style casts (other than void casts) and functional notation casts (other than explicit constructor calls) shall not be used&nbsp;<font class="gray">(MISRACPP2023-8_2_2-a-2)</font>&nbsp;
+&nbsp;&nbsp;C-style casts (other than 'void' casts) and functional notation casts (other than explicit constructor calls) should not be
+used&nbsp;<font class="gray">(MISRACPP2023-8_2_2-b-2)</font>&nbsp;
+</td>
+</tr>
+<tr>
+<td class="tree_node">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;A conversion should not be performed from a pointer type to an arithmetic type&nbsp;<font class="gray">(MISRACPP2023-8_2_8-b-2)</font>&nbsp;
 </td>
 </tr>
 <tr>
 <td class="tree_node">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 [<b>1</b>]
-&nbsp;&nbsp;'if' and 'else' should be followed by a compound statement&nbsp;<font class="gray">(MISRACPP2023-9_3_1-b-2)</font>&nbsp;
+&nbsp;&nbsp;The statement forming the body of an 'if' or 'else' statement should be a compound statement&nbsp;<font class="gray">(MISRACPP2023-9_3_1-b-2)</font>&nbsp;
 </td>
 </tr>
 <tr>
@@ -1064,7 +1110,7 @@ declarations</b>&nbsp;<font class="gray">(MISRACPP2023-6_0_3)</font>&nbsp;
 </tr>
 <tr>
 <td class="tree">&nbsp;
-[<b>30</b>]
+[<b>33</b>]
 &nbsp;&nbsp;<b>Severity&nbsp;4 - Low</b></td>
 </tr>
 <tr>
@@ -1078,7 +1124,7 @@ declarations</b>&nbsp;<font class="gray">(MISRACPP2023-6_0_3)</font>&nbsp;
 <td class="tree_node">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 [<b>2</b>]
-&nbsp;&nbsp;User-provided copy and move member functions of a class should have appropriate signatures&nbsp;<font class="gray">(MISRACPP2023-15_0_2-a-4)</font>&nbsp;
+&nbsp;&nbsp;User-declared, non-deleted copy and move member functions of a class should have appropriate signatures&nbsp;<font class="gray">(MISRACPP2023-15_0_2-a-4)</font>&nbsp;
 </td>
 </tr>
 <tr>
@@ -1123,6 +1169,13 @@ declarations</b>&nbsp;<font class="gray">(MISRACPP2023-6_0_3)</font>&nbsp;
 &nbsp;&nbsp;The result of an assignment operator should not be used&nbsp;<font class="gray">(MISRACPP2023-8_18_2-a-4)</font>&nbsp;
 </td>
 </tr>
+<tr>
+<td class="tree_node">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+[<b>3</b>]
+&nbsp;&nbsp;A conversion should not be performed from a pointer type to an arithmetic type&nbsp;<font class="gray">(MISRACPP2023-8_2_7-c-4)</font>&nbsp;
+</td>
+</tr>
 </table>
 </div>
 </td>
@@ -1162,11 +1215,11 @@ declarations</b>&nbsp;<font class="gray">(MISRACPP2023-6_0_3)</font>&nbsp;
 <tr>
 <td align="left">
 <ul class="root" id="cs_foldinglist">
-<li id="cs_foldheader" class="tree">&nbsp;<font class="gray">+</font><b>&nbsp;53
+<li id="cs_foldheader" class="tree">&nbsp;<font class="gray">+</font><b>&nbsp;59
 (1)                              
 &nbsp;</b><b>Total (Suppressed)</b></li>
 <ul id="cs_foldinglist">
-<li id="cs_foldheader" class="tree">&nbsp;<font class="gray">+</font><b>&nbsp;53
+<li id="cs_foldheader" class="tree">&nbsp;<font class="gray">+</font><b>&nbsp;59
 (1)                              
 &nbsp;</b><b>ATMproject</b></li>
 <ul id="cs_foldinglist">
@@ -1216,7 +1269,7 @@ declarations</b>&nbsp;<font class="gray">(MISRACPP2023-6_0_3)</font>&nbsp;
 <td width="2%"></td>
 <td width="1%" align="right"></td>
 <td width="2%" align="right" valign="top"><font class="gray">21:&nbsp;</font></td>
-<td valign="top" class="tree"><span style="white-space: pre-wrap;">User-provided 'move constructor' should have a 'noexcept' specifier</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">1221bc0b59ebc2873ef36dba98bc5061b1fa258f</font></td>
+<td valign="top" class="tree"><span style="white-space: pre-wrap;">User-declared 'move constructor' should have a 'noexcept' specifier</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">1221bc0b59ebc2873ef36dba98bc5061b1fa258f</font></td>
 <td valign="top" width="10%" nowrap>&nbsp;<a class="gray_link" href="#cs_dev1">zak</a>&nbsp;
 </td>
 <td align="right" valign="top" width="10%" nowrap><font class="gray">MISRACPP2023-15_0_2-a-4</font></td>
@@ -1465,7 +1518,7 @@ declarations</b>&nbsp;<font class="gray">(MISRACPP2023-6_0_3)</font>&nbsp;
 </li>
 </ul>
 </ul>
-<li id="cs_foldheader" class="tree">&nbsp;<font class="gray">+</font><b>&nbsp;27
+<li id="cs_foldheader" class="tree">&nbsp;<font class="gray">+</font><b>&nbsp;33
 (1)                              
 &nbsp;</b><b>src</b></li>
 <ul id="cs_foldinglist" style="display:none">
@@ -1493,7 +1546,7 @@ declarations</b>&nbsp;<font class="gray">(MISRACPP2023-6_0_3)</font>&nbsp;
 <td width="2%"></td>
 <td width="1%" align="right"></td>
 <td width="2%" align="right" valign="top"><font class="gray">8:&nbsp;</font></td>
-<td valign="top" class="tree"><span style="white-space: pre-wrap;">User-provided 'move constructor' should have a 'noexcept' specifier</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">1221bc0b59ebc2873ef36dba98bc5061b1fa258f</font></td>
+<td valign="top" class="tree"><span style="white-space: pre-wrap;">User-declared 'move constructor' should have a 'noexcept' specifier</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">1221bc0b59ebc2873ef36dba98bc5061b1fa258f</font></td>
 <td valign="top" width="10%" nowrap>&nbsp;<a class="gray_link" href="#cs_dev1">zak</a>&nbsp;
 </td>
 <td align="right" valign="top" width="10%" nowrap><font class="gray">MISRACPP2023-15_0_2-a-4</font></td>
@@ -1571,14 +1624,14 @@ declarations</b>&nbsp;<font class="gray">(MISRACPP2023-6_0_3)</font>&nbsp;
 </table>
 </li>
 </ul>
-<li id="cs_foldheader" class="tree">&nbsp;<font class="gray">+</font><b>&nbsp;7
+<li id="cs_foldheader" class="tree">&nbsp;<font class="gray">+</font><b>&nbsp;11
 (0)                              
 &nbsp;</b><b>ATM.cxx</b></li>
 <ul id="cs_foldinglist" style="display:none">
 <li id="item">
 <table width="89%" class="details" cellspacing="0">
 <tr>
-<td colspan="3"><b>Findings</b>:&nbsp;7
+<td colspan="3"><b>Findings</b>:&nbsp;11
 </td>
 <td align="right" colspan="2" nowrap></td>
 </tr>
@@ -1614,6 +1667,24 @@ an initialization list</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font cla
 <td width="2%"></td>
 <td width="1%" align="right"></td>
 <td width="2%" align="right" valign="top"><font class="gray">15:&nbsp;</font></td>
+<td valign="top" class="tree"><span style="white-space: pre-wrap;">Do not cast pointer type 'Account *' to integral type 'bool'</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">3282599353857924489226f46091637d43a9ade6</font></td>
+<td valign="top" width="10%" nowrap>&nbsp;<a class="gray_link" href="#cs_dev1">zak</a>&nbsp;
+</td>
+<td align="right" valign="top" width="10%" nowrap><font class="gray">MISRACPP2023-8_2_8-b-2</font></td>
+</tr>
+<tr valign="bottom">
+<td width="2%"></td>
+<td width="1%" align="right"></td>
+<td width="2%" align="right" valign="top"><font class="gray">15:&nbsp;</font></td>
+<td valign="top" class="tree"><span style="white-space: pre-wrap;">Do not cast pointer type 'Account *' to integral type 'bool'</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">3282599353857924489226f46091637d43a9ade6</font></td>
+<td valign="top" width="10%" nowrap>&nbsp;<a class="gray_link" href="#cs_dev1">zak</a>&nbsp;
+</td>
+<td align="right" valign="top" width="10%" nowrap><font class="gray">MISRACPP2023-8_2_7-c-4</font></td>
+</tr>
+<tr valign="bottom">
+<td width="2%"></td>
+<td width="1%" align="right"></td>
+<td width="2%" align="right" valign="top"><font class="gray">15:&nbsp;</font></td>
 <td valign="top" class="tree"><span style="white-space: pre-wrap;">Assignment operator '=' is used in improper context</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">3282599353857924489226f46091637d43a9ade6</font></td>
 <td valign="top" width="10%" nowrap>&nbsp;<a class="gray_link" href="#cs_dev1">zak</a>&nbsp;
 </td>
@@ -1623,10 +1694,28 @@ an initialization list</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font cla
 <td width="2%"></td>
 <td width="1%" align="right"></td>
 <td width="2%" align="right" valign="top"><font class="gray">23:&nbsp;</font></td>
-<td valign="top" class="tree"><span style="white-space: pre-wrap;">Conditional statement 'if' in a function 'fillUserRequest' should be followed by a block</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">3282599353857924489226f46091637d43a9ade6</font></td>
+<td valign="top" class="tree"><span style="white-space: pre-wrap;">An 'if' statement should be followed by a block</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">3282599353857924489226f46091637d43a9ade6</font></td>
 <td valign="top" width="10%" nowrap>&nbsp;<a class="gray_link" href="#cs_dev1">zak</a>&nbsp;
 </td>
 <td align="right" valign="top" width="10%" nowrap><font class="gray">MISRACPP2023-9_3_1-b-2</font></td>
+</tr>
+<tr valign="bottom">
+<td width="2%"></td>
+<td width="1%" align="right"></td>
+<td width="2%" align="right" valign="top"><font class="gray">23:&nbsp;</font></td>
+<td valign="top" class="tree"><span style="white-space: pre-wrap;">Do not cast pointer type 'Account *' to integral type 'bool'</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">3282599353857924489226f46091637d43a9ade6</font></td>
+<td valign="top" width="10%" nowrap>&nbsp;<a class="gray_link" href="#cs_dev1">zak</a>&nbsp;
+</td>
+<td align="right" valign="top" width="10%" nowrap><font class="gray">MISRACPP2023-8_2_8-b-2</font></td>
+</tr>
+<tr valign="bottom">
+<td width="2%"></td>
+<td width="1%" align="right"></td>
+<td width="2%" align="right" valign="top"><font class="gray">23:&nbsp;</font></td>
+<td valign="top" class="tree"><span style="white-space: pre-wrap;">Do not cast pointer type 'Account *' to integral type 'bool'</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">3282599353857924489226f46091637d43a9ade6</font></td>
+<td valign="top" width="10%" nowrap>&nbsp;<a class="gray_link" href="#cs_dev1">zak</a>&nbsp;
+</td>
+<td align="right" valign="top" width="10%" nowrap><font class="gray">MISRACPP2023-8_2_7-c-4</font></td>
 </tr>
 <tr valign="bottom">
 <td width="2%"></td>
@@ -1705,7 +1794,7 @@ long'</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">1221bc0
 <td valign="top" class="tree"><span style="white-space: pre-wrap;">Do not use a C-style cast to the 'Account *' type</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">1221bc0b59ebc2873ef36dba98bc5061b1fa258f</font></td>
 <td valign="top" width="10%" nowrap>&nbsp;<a class="gray_link" href="#cs_dev1">zak</a>&nbsp;
 </td>
-<td align="right" valign="top" width="10%" nowrap><font class="gray">MISRACPP2023-8_2_2-a-2</font></td>
+<td align="right" valign="top" width="10%" nowrap><font class="gray">MISRACPP2023-8_2_2-b-2</font></td>
 </tr>
 <tr valign="bottom">
 <td width="2%"></td>
@@ -1720,7 +1809,7 @@ long'</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">1221bc0
 <td width="2%"></td>
 <td width="1%" align="right"></td>
 <td width="2%" align="right" valign="top"><font class="gray">25:&nbsp;</font></td>
-<td valign="top" class="tree"><span style="white-space: pre-wrap;">Prefer 'nullptr' to '__null' as the null pointer value</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">1221bc0b59ebc2873ef36dba98bc5061b1fa258f</font></td>
+<td valign="top" class="tree"><span style="white-space: pre-wrap;">Prefer 'nullptr' to '0' as the null pointer value</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">1221bc0b59ebc2873ef36dba98bc5061b1fa258f</font></td>
 <td valign="top" width="10%" nowrap>&nbsp;<a class="gray_link" href="#cs_dev1">zak</a>&nbsp;
 </td>
 <td align="right" valign="top" width="10%" nowrap><font class="gray">MISRACPP2023-7_11_1-a-2</font></td>
@@ -1764,14 +1853,14 @@ long'</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">1221bc0
 </table>
 </li>
 </ul>
-<li id="cs_foldheader" class="tree">&nbsp;<font class="gray">+</font><b>&nbsp;3
+<li id="cs_foldheader" class="tree">&nbsp;<font class="gray">+</font><b>&nbsp;5
 (0)                              
 &nbsp;</b><b>BaseDisplay.cxx</b></li>
 <ul id="cs_foldinglist" style="display:none">
 <li id="item">
 <table width="89%" class="details" cellspacing="0">
 <tr>
-<td colspan="3"><b>Findings</b>:&nbsp;3
+<td colspan="3"><b>Findings</b>:&nbsp;5
 </td>
 <td align="right" colspan="2" nowrap></td>
 </tr>
@@ -1783,6 +1872,24 @@ long'</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">1221bc0
 <td valign="top" width="10%" nowrap>&nbsp;<a class="gray_link" href="#cs_dev1">zak</a>&nbsp;
 </td>
 <td align="right" valign="top" width="10%" nowrap><font class="gray">MISRACPP2023-6_0_3-a-4</font></td>
+</tr>
+<tr valign="bottom">
+<td width="2%"></td>
+<td width="1%" align="right"></td>
+<td width="2%" align="right" valign="top"><font class="gray">9:&nbsp;</font></td>
+<td valign="top" class="tree"><span style="white-space: pre-wrap;">Do not cast pointer type 'const char *' to integral type 'bool'</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">1221bc0b59ebc2873ef36dba98bc5061b1fa258f</font></td>
+<td valign="top" width="10%" nowrap>&nbsp;<a class="gray_link" href="#cs_dev1">zak</a>&nbsp;
+</td>
+<td align="right" valign="top" width="10%" nowrap><font class="gray">MISRACPP2023-8_2_7-c-4</font></td>
+</tr>
+<tr valign="bottom">
+<td width="2%"></td>
+<td width="1%" align="right"></td>
+<td width="2%" align="right" valign="top"><font class="gray">9:&nbsp;</font></td>
+<td valign="top" class="tree"><span style="white-space: pre-wrap;">Do not cast pointer type 'const char *' to integral type 'bool'</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">1221bc0b59ebc2873ef36dba98bc5061b1fa258f</font></td>
+<td valign="top" width="10%" nowrap>&nbsp;<a class="gray_link" href="#cs_dev1">zak</a>&nbsp;
+</td>
+<td align="right" valign="top" width="10%" nowrap><font class="gray">MISRACPP2023-8_2_8-b-2</font></td>
 </tr>
 <tr valign="bottom">
 <td width="2%"></td>
@@ -1864,7 +1971,7 @@ long'</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">1221bc0
 <td>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;<b>[273/273]
+<td class="tree">&nbsp;<b>[279/279]
 &nbsp;MISRA C++ 2023</b>&nbsp;<font class="gray">(MISRACPP2023)</font>&nbsp;
 </td>
 </tr>
@@ -1979,7 +2086,7 @@ long'</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">1221bc0
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Any label referenced by a goto statement shall be declared in the same block, or in a block enclosing the goto statement&nbsp;<font class="gray">(MISRACPP2023-9_6_2-a-2)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A goto statement should reference a label directly enclosed in a statement that encloses this goto&nbsp;<font class="gray">(MISRACPP2023-9_6_2-b-2)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -2060,7 +2167,7 @@ long'</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">1221bc0
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[2/2]
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[3/3]
 &nbsp;Rule 0.2.3 (Advisory) Types with limited visibility should be used at least once</b>&nbsp;<font class="gray">(MISRACPP2023-0_2_3)</font>&nbsp;
 </td>
 </tr>
@@ -2074,6 +2181,12 @@ long'</span>&nbsp;<font class="gray">rev.</font>&nbsp;<font class="gray">1221bc0
 <table cellspacing="0" cellpadding="0">
 <tr>
 <td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Types declared in a block scope should be used at least once&nbsp;<font class="gray">(MISRACPP2023-0_2_3-b-4)</font>&nbsp;
+</td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A project shall not contain unused private member type declarations&nbsp;<font class="gray">(MISRACPP2023-0_2_3-c-4)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -2368,7 +2481,7 @@ they are related&nbsp;<font class="gray">(MISRACPP2023-19_1_2-a-2)</font>&nbsp;
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[1/1]
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[2/2]
 &nbsp;Rule 6.9.1 (Required) The same type aliases shall be used in all declarations of the same entity</b>&nbsp;<font class="gray">(MISRACPP2023-6_9_1)</font>&nbsp;
 </td>
 </tr>
@@ -2376,6 +2489,12 @@ they are related&nbsp;<font class="gray">(MISRACPP2023-19_1_2-a-2)</font>&nbsp;
 <table cellspacing="0" cellpadding="0">
 <tr>
 <td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The same type aliases shall be used in all declarations of the same entity&nbsp;<font class="gray">(MISRACPP2023-6_9_1-a-2)</font>&nbsp;
+</td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'decltype' and 'auto' should be used consistently in all declarations of the same entity&nbsp;<font class="gray">(MISRACPP2023-6_9_1-b-2)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -2657,19 +2776,19 @@ they are related&nbsp;<font class="gray">(MISRACPP2023-19_1_2-a-2)</font>&nbsp;
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Don't write code that depends on the order of evaluation of function arguments&nbsp;<font class="gray">(MISRACPP2023-4_6_1-b-2)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Avoid code that depends on the order of evaluation of function arguments&nbsp;<font class="gray">(MISRACPP2023-4_6_1-b-2)</font>&nbsp;
 </td>
 </tr>
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Don't write code that depends on the order of evaluation of function designator and function arguments&nbsp;<font class="gray">(MISRACPP2023-4_6_1-c-2)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Avoid code that depends on the order of evaluation of the function designator and function arguments&nbsp;<font class="gray">(MISRACPP2023-4_6_1-c-2)</font>&nbsp;
 </td>
 </tr>
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Don't write code that depends on the order of evaluation of expression that involves a function call&nbsp;<font class="gray">(MISRACPP2023-4_6_1-d-2)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Avoid code that depends on the order of evaluation of expressions involving a function call&nbsp;<font class="gray">(MISRACPP2023-4_6_1-d-2)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -2687,7 +2806,7 @@ they are related&nbsp;<font class="gray">(MISRACPP2023-19_1_2-a-2)</font>&nbsp;
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Don't write code that depends on the order of evaluation of function calls&nbsp;<font class="gray">(MISRACPP2023-4_6_1-g-2)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Avoid code that depends on the order of evaluation of function calls&nbsp;<font class="gray">(MISRACPP2023-4_6_1-g-2)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -2755,13 +2874,13 @@ classes&nbsp;<font class="gray">(MISRACPP2023-15_1_2-a-4)</font>&nbsp;
 <table cellspacing="0" cellpadding="0">
 <tr>
 <td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[1/1]
-&nbsp;Rule 24.5.2 (Required) The C++ Standard Library functions memcpy, memmove and memcmp from &lt;cstring&gt; shall not be used</b>&nbsp;<font class="gray">(MISRACPP2023-24_5_2)</font>&nbsp;
+&nbsp;Rule 24.5.2 (Required) The C++ Standard Library functions memcpy, memmove, memcmp and memchr from &lt;cstring&gt; shall not be used</b>&nbsp;<font class="gray">(MISRACPP2023-24_5_2)</font>&nbsp;
 </td>
 </tr>
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The C++ Standard Library functions 'memcpy', 'memmove' and 'memcmp' from &lt;cstring&gt; should not be used&nbsp;<font class="gray">(MISRACPP2023-24_5_2-a-2)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The C++ Standard Library functions 'memcpy', 'memmove', 'memcmp' and 'memchr' from &lt;cstring&gt; should not be used&nbsp;<font class="gray">(MISRACPP2023-24_5_2-a-2)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -2781,7 +2900,7 @@ classes&nbsp;<font class="gray">(MISRACPP2023-15_1_2-a-4)</font>&nbsp;
 <table cellspacing="0" cellpadding="0">
 <tr>
 <td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[2/2]
-&nbsp;Rule 28.6.3 (Required) An object shall not be used while in a potentially moved-from state</b>&nbsp;<font class="gray">(MISRACPP2023-28_6_3)</font>&nbsp;
+&nbsp;Rule 28.6.3 (Required) A variable shall not be referenced while it has potentially moved-from state</b>&nbsp;<font class="gray">(MISRACPP2023-28_6_3)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -2813,13 +2932,14 @@ classes&nbsp;<font class="gray">(MISRACPP2023-15_1_2-a-4)</font>&nbsp;
 <table cellspacing="0" cellpadding="0">
 <tr>
 <td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[1/1]
-&nbsp;Rule 28.6.4 (Required) The result of std::remove, std::remove_if, std::unique and empty shall be used</b>&nbsp;<font class="gray">(MISRACPP2023-28_6_4)</font>&nbsp;
+&nbsp;Rule 28.6.4 (Required) The result of std::remove, std::remove_if, std::unique, std::unique_ptr::release, and empty shall be
+used</b>&nbsp;<font class="gray">(MISRACPP2023-28_6_4)</font>&nbsp;
 </td>
 </tr>
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The result of std::remove, std::remove_if, std::unique and empty shall be used&nbsp;<font class="gray">(MISRACPP2023-28_6_4-a-2)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The result of 'std::remove', 'std::remove_if', 'std::unique', 'std::unique_ptr::release' and 'empty' should be used&nbsp;<font class="gray">(MISRACPP2023-28_6_4-a-2)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -2915,7 +3035,7 @@ same array&nbsp;<font class="gray">(MISRACPP2023-8_7_1-b-2)</font>&nbsp;
 <table cellspacing="0" cellpadding="0">
 <tr>
 <td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[1/1]
-&nbsp;Rule 0.1.1 (Advisory) A value should not be unnecessarily written to a local object</b>&nbsp;<font class="gray">(MISRACPP2023-0_1_1)</font>&nbsp;
+&nbsp;Rule 0.1.1 (Advisory) A write to a local object should be necessary</b>&nbsp;<font class="gray">(MISRACPP2023-0_1_1)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -3089,7 +3209,7 @@ once</b>&nbsp;<font class="gray">(MISRACPP2023-19_2_1)</font>&nbsp;
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[3/3]
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[4/4]
 &nbsp;Rule 21.6.2 (Required) Dynamic memory shall be managed automatically</b>&nbsp;<font class="gray">(MISRACPP2023-21_6_2)</font>&nbsp;
 </td>
 </tr>
@@ -3114,7 +3234,13 @@ once</b>&nbsp;<font class="gray">(MISRACPP2023-19_2_1)</font>&nbsp;
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[4/4]
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The memory management functions 'std::get_temporary_buffer' and 'std::return_temporary_buffer' should not be used&nbsp;<font class="gray">(MISRACPP2023-21_6_2-d-2)</font>&nbsp;
+</td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[5/5]
 &nbsp;Rule 21.6.3 (Required) Advanced memory management shall not be used</b>&nbsp;<font class="gray">(MISRACPP2023-21_6_3)</font>&nbsp;
 </td>
 </tr>
@@ -3145,22 +3271,40 @@ once</b>&nbsp;<font class="gray">(MISRACPP2023-19_2_1)</font>&nbsp;
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[1/1]
-&nbsp;Rule 7.0.6 (Required) Assignment between numeric types shall be appropriate</b>&nbsp;<font class="gray">(MISRACPP2023-7_0_6)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The memory management functions 'std::get_temporary_buffer' and 'std::return_temporary_buffer' should not be used&nbsp;<font class="gray">(MISRACPP2023-21_6_3-e-2)</font>&nbsp;
 </td>
 </tr>
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Assignment between numeric types shall be appropriate&nbsp;<font class="gray">(MISRACPP2023-7_0_6-a-2)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[3/3]
+&nbsp;Rule 7.0.6 (Required) Converting transfers between numeric types shall be appropriate</b>&nbsp;<font class="gray">(MISRACPP2023-7_0_6)</font>&nbsp;
+</td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Converting transfers between numeric types shall be appropriate&nbsp;<font class="gray">(MISRACPP2023-7_0_6-a-2)</font>&nbsp;
+</td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The argument and the parameter of a function call should have the same type if the parameter is not overload-independent&nbsp;<font class="gray">(MISRACPP2023-7_0_6-b-2)</font>&nbsp;
+</td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Passing an argument to a function's ellipsis parameter should not implicitly change the argument's type&nbsp;<font class="gray">(MISRACPP2023-7_0_6-c-2)</font>&nbsp;
 </td>
 </tr>
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
 <td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[1/1]
-&nbsp;Rule 21.6.4 (Required) If a project defines either a sized or unsized version of a global operator delete, then both shall
-be defined</b>&nbsp;<font class="gray">(MISRACPP2023-21_6_4)</font>&nbsp;
+&nbsp;Rule 21.6.4 (Required) If a project defines an unsized version of a global operator delete, the corresponding sized operator
+delete shall be defined in the same file, and vice versa</b>&nbsp;<font class="gray">(MISRACPP2023-21_6_4)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -3271,7 +3415,7 @@ category of an operand</b>&nbsp;<font class="gray">(MISRACPP2023-7_0_5)</font>&n
 <table cellspacing="0" cellpadding="0">
 <tr>
 <td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[1/1]
-&nbsp;Rule 13.1.2 (Required) An accessible base class shall not be both virtual and non-virtual in the same hierarchy</b>&nbsp;<font class="gray">(MISRACPP2023-13_1_2)</font>&nbsp;
+&nbsp;Rule 13.1.2 (Required) A base class shall not be both virtual and non-virtual in the same hierarchy</b>&nbsp;<font class="gray">(MISRACPP2023-13_1_2)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -3348,8 +3492,8 @@ linkage</b>&nbsp;<font class="gray">(MISRACPP2023-6_2_4)</font>&nbsp;
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template specialization shall be declared in the same file as the primary template or a user-defined type, for which the specialization
-is declared&nbsp;<font class="gray">(MISRACPP2023-6_2_3-d-2)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Template specialization should be declared in the same file (or in the file directly included) as the primary template or
+a user-defined type, for which the specialization is declared&nbsp;<font class="gray">(MISRACPP2023-6_2_3-e-2)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -3586,7 +3730,7 @@ units) shall be declared with the same set of type-ids&nbsp;<font class="gray">(
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Casts shall not be performed between a pointer to a function and any other type&nbsp;<font class="gray">(MISRACPP2023-8_2_4-a-2)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Casts shall not be performed between a pointer to function and any other type&nbsp;<font class="gray">(MISRACPP2023-8_2_4-b-2)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -3754,7 +3898,7 @@ shall occur last&nbsp;<font class="gray">(MISRACPP2023-0_0_1-i-2)</font>&nbsp;
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A cast should not convert a pointer type to an integral type&nbsp;<font class="gray">(MISRACPP2023-8_2_8-a-2)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A conversion should not be performed from a pointer type to an arithmetic type&nbsp;<font class="gray">(MISRACPP2023-8_2_8-b-2)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -3800,33 +3944,27 @@ as the operand of # or ##&nbsp;<font class="gray">(MISRACPP2023-19_3_4-a-2)</fon
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[2/2]
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[1/1]
 &nbsp;Rule 8.2.7 (Advisory) A cast should not convert a pointer type to an integral type</b>&nbsp;<font class="gray">(MISRACPP2023-8_2_7)</font>&nbsp;
 </td>
 </tr>
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A cast should not convert a pointer type to an integral type&nbsp;<font class="gray">(MISRACPP2023-8_2_7-a-4)</font>&nbsp;
-</td>
-</tr>
-</table>
-<table cellspacing="0" cellpadding="0">
-<tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A cast should not convert a pointer type to 'intptr_t' and 'uintptr_t' types&nbsp;<font class="gray">(MISRACPP2023-8_2_7-b-4)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A conversion should not be performed from a pointer type to an arithmetic type&nbsp;<font class="gray">(MISRACPP2023-8_2_7-c-4)</font>&nbsp;
 </td>
 </tr>
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
 <td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[1/1]
-&nbsp;Rule 15.0.2 (Advisory) User-provided copy and move member functions of a class should have appropriate signatures</b>&nbsp;<font class="gray">(MISRACPP2023-15_0_2)</font>&nbsp;
+&nbsp;Rule 15.0.2 (Advisory) User-declared, non-deleted copy and move member functions of a class should have appropriate signatures</b>&nbsp;<font class="gray">(MISRACPP2023-15_0_2)</font>&nbsp;
 </td>
 </tr>
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User-provided copy and move member functions of a class should have appropriate signatures&nbsp;<font class="gray">(MISRACPP2023-15_0_2-a-4)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User-declared, non-deleted copy and move member functions of a class should have appropriate signatures&nbsp;<font class="gray">(MISRACPP2023-15_0_2-a-4)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -3898,7 +4036,8 @@ only be used as an operand to these operators&nbsp;<font class="gray">(MISRACPP2
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C-style casts (other than void casts) and functional notation casts (other than explicit constructor calls) shall not be used&nbsp;<font class="gray">(MISRACPP2023-8_2_2-a-2)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C-style casts (other than 'void' casts) and functional notation casts (other than explicit constructor calls) should not be
+used&nbsp;<font class="gray">(MISRACPP2023-8_2_2-b-2)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -4015,13 +4154,13 @@ only be used as an operand to these operators&nbsp;<font class="gray">(MISRACPP2
 <table cellspacing="0" cellpadding="0">
 <tr>
 <td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[1/1]
-&nbsp;Rule 6.7.1 (Required) Local variables shall not have static storage duration</b>&nbsp;<font class="gray">(MISRACPP2023-6_7_1)</font>&nbsp;
+&nbsp;Rule 6.7.1 (Required) Local variables shall not have static or thread storage duration</b>&nbsp;<font class="gray">(MISRACPP2023-6_7_1)</font>&nbsp;
 </td>
 </tr>
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Local variables shall not have static storage duration&nbsp;<font class="gray">(MISRACPP2023-6_7_1-a-2)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Local variables shall not have static or thread storage duration&nbsp;<font class="gray">(MISRACPP2023-6_7_1-a-2)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -4067,7 +4206,7 @@ sequence or universal character name</b>&nbsp;<font class="gray">(MISRACPP2023-5
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'if' and 'else' should be followed by a compound statement&nbsp;<font class="gray">(MISRACPP2023-9_3_1-b-2)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The statement forming the body of an 'if' or 'else' statement should be a compound statement&nbsp;<font class="gray">(MISRACPP2023-9_3_1-b-2)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -4086,7 +4225,7 @@ sequence or universal character name</b>&nbsp;<font class="gray">(MISRACPP2023-5
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[1/1]
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[2/2]
 &nbsp;Rule 5.13.2 (Required) Octal escape sequences, hexadecimal escape sequences and universal character names shall be terminated</b>&nbsp;<font class="gray">(MISRACPP2023-5_13_2)</font>&nbsp;
 </td>
 </tr>
@@ -4094,6 +4233,12 @@ sequence or universal character name</b>&nbsp;<font class="gray">(MISRACPP2023-5
 <table cellspacing="0" cellpadding="0">
 <tr>
 <td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Octal and hexadecimal escape sequences shall be terminated&nbsp;<font class="gray">(MISRACPP2023-5_13_2-a-2)</font>&nbsp;
+</td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Universal character name shall be terminated&nbsp;<font class="gray">(MISRACPP2023-5_13_2-b-2)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -4450,20 +4595,21 @@ names</b>&nbsp;<font class="gray">(MISRACPP2023-13_3_3)</font>&nbsp;
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Avoid using vector&lt;bool&gt;&nbsp;<font class="gray">(MISRACPP2023-26_3_1-a-4)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The 'std::vector&lt;bool&gt;' specialization shall not be used&nbsp;<font class="gray">(MISRACPP2023-26_3_1-a-4)</font>&nbsp;
 </td>
 </tr>
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
 <td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[1/1]
-&nbsp;Rule 7.11.3 (Required) A conversion from function type to pointer-to-function type shall only occur in appropriate contexts</b>&nbsp;<font class="gray">(MISRACPP2023-7_11_3)</font>&nbsp;
+&nbsp;Rule 7.11.3 (Required) A conversion to pointer-to-function from a function type or class type shall only occur in appropriate
+contexts</b>&nbsp;<font class="gray">(MISRACPP2023-7_11_3)</font>&nbsp;
 </td>
 </tr>
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A conversion from function type to pointer-to-function type shall only occur in appropriate contexts&nbsp;<font class="gray">(MISRACPP2023-7_11_3-a-2)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A conversion to pointer-to-function from a function type or class type shall only occur in appropriate contexts&nbsp;<font class="gray">(MISRACPP2023-7_11_3-a-2)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -4495,7 +4641,7 @@ names</b>&nbsp;<font class="gray">(MISRACPP2023-13_3_3)</font>&nbsp;
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Prefer 'nullptr' over 'NULL' or '0'(zero)&nbsp;<font class="gray">(MISRACPP2023-7_11_1-a-2)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The only form of the null-pointer-constant should be 'nullptr'&nbsp;<font class="gray">(MISRACPP2023-7_11_1-a-2)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -4611,7 +4757,7 @@ an object with a greater lifetime</b>&nbsp;<font class="gray">(MISRACPP2023-6_8_
 <table cellspacing="0" cellpadding="0">
 <tr>
 <td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[1/1]
-&nbsp;Rule 6.4.3 (Required) A name that is present in a dependent base shall not be resolved by unqualified lookup</b>&nbsp;<font class="gray">(MISRACPP2023-6_4_3)</font>&nbsp;
+&nbsp;Rule 6.4.3 (Required) An identifier that is present in a dependent base shall not be resolved by unqualified lookup</b>&nbsp;<font class="gray">(MISRACPP2023-6_4_3)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -4639,20 +4785,14 @@ function&nbsp;<font class="gray">(MISRACPP2023-25_5_3-a-1)</font>&nbsp;
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[2/2]
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[1/1]
 &nbsp;Rule 6.4.2 (Required) Derived classes shall not conceal functions that are inherited from their bases</b>&nbsp;<font class="gray">(MISRACPP2023-6_4_2)</font>&nbsp;
 </td>
 </tr>
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Member functions declared in derived classes should not hide equivalent functions declared in base classes&nbsp;<font class="gray">(MISRACPP2023-6_4_2-a-2)</font>&nbsp;
-</td>
-</tr>
-</table>
-<table cellspacing="0" cellpadding="0">
-<tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Member functions declared in derived classes should not hide non-equivalent functions declared in base classes&nbsp;<font class="gray">(MISRACPP2023-6_4_2-b-2)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Derived classes shall not conceal functions that are inherited from their bases&nbsp;<font class="gray">(MISRACPP2023-6_4_2-c-2)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -4677,7 +4817,7 @@ function&nbsp;<font class="gray">(MISRACPP2023-25_5_3-a-1)</font>&nbsp;
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[1/1]
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>[2/2]
 &nbsp;Rule 6.0.4 (Required) The identifier main shall not be used for a function other than the global function main</b>&nbsp;<font class="gray">(MISRACPP2023-6_0_4)</font>&nbsp;
 </td>
 </tr>
@@ -4685,6 +4825,13 @@ function&nbsp;<font class="gray">(MISRACPP2023-25_5_3-a-1)</font>&nbsp;
 <table cellspacing="0" cellpadding="0">
 <tr>
 <td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The identifier main shall not be used for a function other than the global function main&nbsp;<font class="gray">(MISRACPP2023-6_0_4-a-2)</font>&nbsp;
+</td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="0">
+<tr>
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The identifier 'main' followed by an opening parenthesis should not be used, except in the declaration of the global function
+'main'&nbsp;<font class="gray">(MISRACPP2023-6_0_4-b-2)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -4724,7 +4871,7 @@ declarations</b>&nbsp;<font class="gray">(MISRACPP2023-6_0_3)</font>&nbsp;
 </table>
 <table cellspacing="0" cellpadding="0">
 <tr>
-<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Always declare functions at file scope&nbsp;<font class="gray">(MISRACPP2023-6_0_1-a-2)</font>&nbsp;
+<td class="tree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Functions should not be declared at block scope&nbsp;<font class="gray">(MISRACPP2023-6_0_1-a-2)</font>&nbsp;
 </td>
 </tr>
 </table>
@@ -4830,8 +4977,8 @@ as if they have pointer to const-qualified type&nbsp;<font class="gray">(MISRACP
 <tr>
 <td class="tree" align="left">
 <div id="paramsHeader">cpptestcli -compiler gcc_11-64 -config builtin://MISRA C++ 2023 -report /home/support/ct_work/ATMproject/reports -resource
-/home/support/ct_work/ATMproject -module . -exclude **/googletest/** -exclude **/tests/** -exclude **/googlemock/** -input
-build/compile_commands.json
+/home/support/ct_work/ATMproject -settings cpptestcli.properties -module . -exclude **/googletest/** -exclude **/tests/**
+-exclude **/googlemock/** -input build/compile_commands.json
 </div>
 </td>
 </tr>
